@@ -6,20 +6,20 @@
 -->
 <AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161156" AlpVersion="8.9.0">
 <Model>
-	<Id>1739391148985</Id>
-	<Name><![CDATA[Model]]></Name>
+	<Id>1739391747207</Id>
+	<Name><![CDATA[VirusSpreadModel]]></Name>
 	<EngineVersion>6</EngineVersion>
-	<JavaPackageName><![CDATA[model]]></JavaPackageName>
+	<JavaPackageName><![CDATA[virusspreadmodel]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Second]]></ModelTimeUnit>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
-			<Id>1739391148988</Id>
+			<Id>1739391747210</Id>
 			<Name><![CDATA[Main]]></Name>
 			<Generic>false</Generic>
 			<GenericParameter>
-				<Id>1739391148994</Id>
-				<Name><![CDATA[1739391148994]]></Name>
+				<Id>1739391747216</Id>
+				<Name><![CDATA[1739391747216]]></Name>
 				<GenericParameterValue Class="CodeValue">
 					<Code><![CDATA[T extends Agent]]></Code>
 				</GenericParameterValue>
@@ -90,7 +90,7 @@
 					</RecurrenceCode>
 			</DatasetsCreationProperties>
 			<ScaleRuler>
-				<Id>1739391148991</Id>
+				<Id>1739391747213</Id>
 				<Name><![CDATA[scale]]></Name>
 				<X>0</X><Y>-150</Y>
 				<PublicFlag>false</PublicFlag>
@@ -105,11 +105,11 @@
 				<Scale>10</Scale>
 				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
 			</ScaleRuler>
-			<CurrentLevel>1739391148995</CurrentLevel>
-			<ConnectionsId>1739391148989</ConnectionsId>
+			<CurrentLevel>1739391747217</CurrentLevel>
+			<ConnectionsId>1739391747211</ConnectionsId>
 			<AgentLinks>
 				<AgentLink>
-					<Id>1739391148989</Id>
+					<Id>1739391747211</Id>
 					<Name><![CDATA[connections]]></Name>
 					<X>50</X><Y>-50</Y>
 					<Label><X>15</X><Y>0</Y></Label>
@@ -132,7 +132,7 @@
 
 			<Presentation>
 				<Level>
-					<Id>1739391148995</Id>
+					<Id>1739391747217</Id>
 					<Name><![CDATA[level]]></Name>
 					<X>0</X><Y>0</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -170,8 +170,8 @@
 		</ExportSettings>
 	</Database>
 	
-	<RunConfiguration ActiveObjectClassId="1739391148988">
-		<Id>1739391149000</Id>
+	<RunConfiguration ActiveObjectClassId="1739391747210">
+		<Id>1739391747222</Id>
 		<Name><![CDATA[RunConfiguration]]></Name>
 		<MaximumMemory>512</MaximumMemory>
 		<ModelTimeProperties>
@@ -196,8 +196,8 @@
 	</RunConfiguration>
 	<Experiments>	
 		<!--   =========   Simulation Experiment   ========  -->
-		<SimulationExperiment ActiveObjectClassId="1739391148988">
-			<Id>1739391148997</Id>
+		<SimulationExperiment ActiveObjectClassId="1739391747210">
+			<Id>1739391747219</Id>
 			<Name><![CDATA[Simulation]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
@@ -210,7 +210,7 @@
 
 			<Presentation>
 				<Text>
-					<Id>1739391148999</Id>
+					<Id>1739391747221</Id>
 					<Name><![CDATA[text]]></Name>
 					<X>50</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -222,7 +222,7 @@
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-12490271</Color>
-					<Text><![CDATA[Model]]></Text>
+					<Text><![CDATA[VirusSpreadModel]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>24</Size>
@@ -237,7 +237,7 @@
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[Model : Simulation]]></Title>	
+				<Title><![CDATA[VirusSpreadModel : Simulation]]></Title>	
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
