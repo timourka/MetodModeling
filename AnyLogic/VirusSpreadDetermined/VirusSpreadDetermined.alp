@@ -125,7 +125,7 @@
 				</Variable>
 				<Variable Class="PlainVariable">
 					<Id>1743024853896</Id>
-					<Name><![CDATA[longest]]></Name>
+					<Name><![CDATA[hardness]]></Name>
 					<X>80</X><Y>360</Y>
 					<Label><X>10</X><Y>-5</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -135,6 +135,21 @@
 						<Type><![CDATA[int]]></Type>        
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[10]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1743057024294</Id>
+					<Name><![CDATA[alpha]]></Name>
+					<X>220</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="true" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.1]]></Code>
 						</InitialValue>
 					</Properties>
 				</Variable>
@@ -157,7 +172,7 @@
 				<Variable Class="StockVariable">
 					<Id>1743024982338</Id>
 					<Name><![CDATA[I]]></Name>
-					<X>220</X><Y>270</Y>
+					<X>220</X><Y>290</Y>
 					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -195,33 +210,33 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1743024979852" TargetId="1743024982338" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[min(infectionous*I, S)
+						<Formula><![CDATA[min(infectionous*I*alpha, S)
 ]]></Formula>
 						<Color/>
 						<ValveIndex>1</ValveIndex>
 						<Points>
 							<Point><X>0</X><Y>0</Y></Point>
 							<Point><X>130</X><Y>0</Y></Point>
-							<Point><X>130</X><Y>50</Y></Point>
+							<Point><X>130</X><Y>70</Y></Point>
 						</Points>
 					</Properties>
 				</Variable>
 				<Variable Class="Flow">
 					<Id>1743025049344</Id>
 					<Name><![CDATA[Recovery]]></Name>
-					<X>220</X><Y>270</Y>
+					<X>220</X><Y>290</Y>
 					<Label><X>0</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SourceId="1743024982338" TargetId="1743024984983" External="false" Constant="false" Array="false">
-						<Formula><![CDATA[10/longest]]></Formula>
+						<Formula><![CDATA[10/hardness]]></Formula>
 						<Color/>
 						<ValveIndex>1</ValveIndex>
 						<Points>
 							<Point><X>0</X><Y>0</Y></Point>
-							<Point><X>0</X><Y>90</Y></Point>
-							<Point><X>80</X><Y>90</Y></Point>
+							<Point><X>0</X><Y>70</Y></Point>
+							<Point><X>80</X><Y>70</Y></Point>
 						</Points>
 					</Properties>
 				</Variable>
@@ -350,7 +365,7 @@
 					<PolarityPosition>0.95</PolarityPosition>
 					<Direction><X>140</X><Y>0</Y></Direction>
 					<Id>1743025437162</Id>
-					<Name><![CDATA[longest - Recovery]]></Name>
+					<Name><![CDATA[hardness - Recovery]]></Name>
 					<X>80</X><Y>360</Y>
 					<Label><X>40</X><Y>-50</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -363,7 +378,7 @@
 				<Link SourceId="1743024695410" TargetId="1743024982338" Polarity="null">
 					<Height>78.976</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>10</X><Y>210</Y></Direction>
+					<Direction><X>10</X><Y>230</Y></Direction>
 					<Id>1743025486870</Id>
 					<Name><![CDATA[Infected - I]]></Name>
 					<X>210</X><Y>60</Y>
@@ -378,10 +393,10 @@
 				<Link SourceId="1743024982338" TargetId="1743025032807" Polarity="null">
 					<Height>20.0</Height>
 					<PolarityPosition>0.95</PolarityPosition>
-					<Direction><X>0</X><Y>-50</Y></Direction>
+					<Direction><X>0</X><Y>-70</Y></Direction>
 					<Id>1743027802626</Id>
 					<Name><![CDATA[I - Infection]]></Name>
-					<X>220</X><Y>270</Y>
+					<X>220</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -397,6 +412,21 @@
 					<Id>1743027852242</Id>
 					<Name><![CDATA[S - Infection]]></Name>
 					<X>90</X><Y>220</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Color/>
+					<LineWidth>1</LineWidth>
+					<Delay>false</Delay>
+				</Link>
+				<Link SourceId="1743057024294" TargetId="1743025032807" Polarity="null">
+					<Height>20.0</Height>
+					<PolarityPosition>0.95</PolarityPosition>
+					<Direction><X>0</X><Y>60</Y></Direction>
+					<Id>1743057061462</Id>
+					<Name><![CDATA[alpha - Infection]]></Name>
+					<X>220</X><Y>160</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -442,6 +472,85 @@
 					<Z>0</Z>
 					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
 
+			<Presentation>
+    			<TimeStackChart>
+					<Id>1743056840520</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>450</X><Y>130</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1743062400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>MODEL_TIME_UNIT</TimeWindowUnits>
+					<TimeWindowExpression><![CDATA[100]]></TimeWindowExpression>
+					<DatasetExpression>
+					<Id>1743056844659</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-256</Color>
+					<Expression2><![CDATA[S]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Susceptible]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>1743056884910</Id>
+					<Expression><![CDATA[my_dataset1]]></Expression>
+					<Color>-65536</Color>
+					<Expression2><![CDATA[I]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Infected]]></Title>
+					</DatasetExpression>
+					<DatasetExpression>
+					<Id>1743056906880</Id>
+					<Expression><![CDATA[my_dataset2]]></Expression>
+					<Color>-9728477</Color>
+					<Expression2><![CDATA[R]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+							<Title><![CDATA[Recovered]]></Title>
+					</DatasetExpression>
+					<SamplesToKeep>100</SamplesToKeep>
+					<VerScaleToExpression><![CDATA[1]]></VerScaleToExpression>
+					<VerScaleType>AUTO</VerScaleType>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimeStackChart>
+			</Presentation>
 
 				</Level>
 			</Presentation>
